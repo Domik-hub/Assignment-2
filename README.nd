@@ -1,0 +1,94 @@
+# Vehicle Management System
+
+## Project Overview
+
+This project implements a **Vehicle Management System** using
+**Object-Oriented Programming (OOP)** principles in Java.
+The main goal of the project is to demonstrate the use of
+**inheritance**, **abstraction**, **composition**, **aggregation**,
+and **method overriding**.
+
+The system is built around an abstract `Vehicle` class,
+which defines common properties and behaviors for all vehicles.
+Concrete vehicle types such as `Car`, `Motorcycle`, and `Truck`
+extend this abstract class and provide their own specific implementations.
+A separate `Driver` class is used to demonstrate composition and aggregation relationships.
+
+---
+
+## Class Hierarchy Explanation
+
+### Vehicle (Abstract Superclass)
+
+* Represents a generic vehicle
+* Contains common fields such as `brand`, `year`, and an associated `Driver`
+* Declares abstract methods `startEngine()` and `stopEngine()`
+* Implements a concrete method `displayInfo()`
+
+### Subclasses
+
+* **Car**
+
+  * Inherits from `Vehicle`
+  * Additional fields: `doors`, `fuelType`
+  * Overrides `startEngine()` and `stopEngine()`
+
+* **Motorcycle**
+
+  * Inherits from `Vehicle`
+  * Additional field: `hasSidecar`
+  * Overrides `startEngine()` and `stopEngine()`
+
+* **Truck**
+
+  * Inherits from `Vehicle`
+  * Additional fields: `capacity`, `numAxles`
+  * Overrides `startEngine()` and `stopEngine()`
+
+### Driver Class
+
+* Represents a vehicle driver
+* Fields: `name`, `licenseNumber`
+* A `Vehicle` object contains a `Driver` object (composition)
+* One `Driver` can be associated with multiple `Vehicle` objects (aggregation)
+
+
+
+## Instructions to Compile and Run
+
+1. Open a terminal in the `src` directory
+2. Compile all Java files:
+
+```
+javac *.java
+```
+
+3. Run the program:
+
+```
+java Main
+```
+
+---
+
+## Screenshots
+
+Screenshots are stored in the following directory:
+
+```
+docs/screenshots/
+```
+
+---
+
+## Reflection
+
+Inheritance significantly simplified the system design by allowing common vehicle
+attributes and behaviors to be defined once in the abstract `Vehicle` class.
+This reduced code duplication and made the system easier to extend with new vehicle types.
+
+Method overriding allowed each subclass to provide its own specific implementation
+of engine behavior while maintaining a consistent interface. One challenge encountered
+was correctly using `protected` and `private` access modifiers to balance encapsulation
+with accessibility in subclasses. Understanding when to expose data and when to restrict
+access was key to building a clean and maintainable class hierarchy.
